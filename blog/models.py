@@ -26,3 +26,15 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Comments(models.Model):
+    content=models.TextField()
+    createTime=models.DateTimeField(auto_now_add=True)
+    userID=models.ForeignKey(User,models.CASCADE)
+    postID=models.ForeignKey(Post,models.CASCADE)
+
+class Likes(models.Model):
+    userID=models.ForeignKey(userAdds,models.CASCADE)
+    postID=models.ForeignKey(Post,models.CASCADE)
+
+    def __str__(self):
+        return self.title
