@@ -22,6 +22,7 @@ class Post(models.Model):
         return self.title
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     class Meta:
 =======
      class Meta:
@@ -29,6 +30,9 @@ class Post(models.Model):
 =======
     class Meta:
 >>>>>>> sara
+=======
+    class Meta:
+>>>>>>> ac06e2f14be7d1aab3ac3196709d2ac6f07d85c7
         ordering = ['-created']
 
 class Comments(models.Model):
@@ -36,7 +40,6 @@ class Comments(models.Model):
     createTime=models.DateTimeField(auto_now_add=True)
     userID=models.ForeignKey(User,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
-<<<<<<< HEAD
 
 class reply(models.Model):
     slug=models.SlugField(max_length=200)
@@ -46,17 +49,3 @@ class reply(models.Model):
 class Likes(models.Model):
     userID=models.ForeignKey(userAdds,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
-
-
-
-=======
-    
-class reply(models.Model):
-    slug=models.SlugField(max_length=200)
-    userId=models.ForeignKey(userAdds,on_delete=models.CASCADE)
-    comId=models.ForeignKey(Comments,on_delete=models.CASCADE)
-    
-class Likes(models.Model):
-    userID=models.ForeignKey(userAdds,models.CASCADE)
-    postID=models.ForeignKey(Post,models.CASCADE)
->>>>>>> 60498561d1399f2ea808737c97bb33648187e1b9
