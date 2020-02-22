@@ -28,12 +28,12 @@ class Comments(models.Model):
     createTime=models.DateTimeField(auto_now_add=True)
     userID=models.ForeignKey(User,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
-    
+
 class reply(models.Model):
     slug=models.SlugField(max_length=200)
     userId=models.ForeignKey(userAdds,on_delete=models.CASCADE)
     comId=models.ForeignKey(Comments,on_delete=models.CASCADE)
-    
+
 class Likes(models.Model):
     userID=models.ForeignKey(userAdds,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
