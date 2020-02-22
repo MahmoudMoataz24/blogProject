@@ -7,11 +7,6 @@ class userAdds(models.Model) :
     canInteract = models.BooleanField()
     isAdmin = models.BooleanField()
 
-class reply(models.Model):
-    slug=models.SlugField(max_length=200)
-    userId=models.ForeignKey(userAdds,on_delete=models.CASCADE)
-    # comId=models.ForeignKey(comments,on_delete=models.CASCADE)
-
 class Category (models.Model):
     title = models.CharField(max_length=200)
 
@@ -32,9 +27,13 @@ class Comments(models.Model):
     userID=models.ForeignKey(User,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
 
+class reply(models.Model):
+    slug=models.SlugField(max_length=200)
+    userId=models.ForeignKey(userAdds,on_delete=models.CASCADE)
+    comId=models.ForeignKey(Comments,on_delete=models.CASCADE)
+
 class Likes(models.Model):
     userID=models.ForeignKey(userAdds,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
 
-    def __str__(self):
-        return self.title
+
