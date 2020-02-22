@@ -20,6 +20,8 @@ class Post(models.Model):
    
     def __str__(self):
         return self.title
+    class Meta:
+        ordering = ['-created']
 
 class Comments(models.Model):
     content=models.TextField()
@@ -35,5 +37,6 @@ class reply(models.Model):
 class Likes(models.Model):
     userID=models.ForeignKey(userAdds,models.CASCADE)
     postID=models.ForeignKey(Post,models.CASCADE)
+
 
 
