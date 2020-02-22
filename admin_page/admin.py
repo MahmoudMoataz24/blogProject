@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Comments,Likes,Post,userAdds,reply,Category
+from blog.models import Comments,Likes,Post,User,reply,Category
 # Register your models here.
 
 class PostAdmin(admin.ModelAdmin):
