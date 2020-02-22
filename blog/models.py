@@ -20,7 +20,7 @@ class Post(models.Model):
    
     def __str__(self):
         return self.title
-     class Meta:
+    class Meta:
         ordering = ['-created']
 
 class Comments(models.Model):
@@ -32,7 +32,7 @@ class Comments(models.Model):
 class reply(models.Model):
     slug=models.SlugField(max_length=200)
     userId=models.ForeignKey(userAdds,on_delete=models.CASCADE)
-    comId=models.ForeignKey(comments,on_delete=models.CASCADE)
+    comId=models.ForeignKey(Comments,on_delete=models.CASCADE)
     
 class Likes(models.Model):
     userID=models.ForeignKey(userAdds,models.CASCADE)
