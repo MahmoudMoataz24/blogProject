@@ -26,6 +26,7 @@ class Comments(models.Model):
     userID=models.ForeignKey(User, on_delete=models.CASCADE)
     postID=models.ForeignKey(Post, on_delete=models.CASCADE)
 
+
 class reply(models.Model):
     slug=models.SlugField(max_length=200)
     userId=models.ForeignKey(User,on_delete=models.CASCADE)
