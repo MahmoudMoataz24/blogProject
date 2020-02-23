@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from blog.models import *
 from django.http import HttpResponse,HttpResponseRedirect
-from admin_page.forms import UserForm
+from admin_page.forms import UserForm,PostForm,CategoryForm
 # Create your views here.
 def viewAll(request):
 	user=User.objects.all()
@@ -35,4 +35,84 @@ def EditUser(request,num):
 def deleteUser(request,num):
 	user = User.objects.get(id = num)
 	user.delete()
-	return HttpResponseRedirect('/admin_page/all')
+	return HttpResponseRedirect('/admin_page/posts')
+
+def viewPost(request):
+	all_posts = Post.objects.all()
+	print(all_posts)
+	context = {'all_posts':all_posts}
+	return render(request,'admin_page/posts.html',context)
+
+def addPost(request):
+	if request.method == "POST":
+		post_form = PostForm(request.POST)
+		if post_form.is_valid():
+			post_form.save()
+		return HttpResponseRedirect("admin_page/posts")
+	else:
+		post_form =PostForm() 
+		context = {'post_form':post_form}
+		return render(request,'admin_page/post_add.html',context)
+
+def EditPost(request,num):
+	post = Post.objects.get(id=num)
+	if request.method=="POST":
+		form = PostForm(request.POST,instance=post)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('admin_page/posts.html')
+	else:
+		form = PostForm(instance=post)
+		context ={'form':form}
+		return render(request,'admin_page/post_add.html',context)
+
+def delPost(request,num):
+	post= Post.objects.get(id=num)
+	post.delete()
+	return HttpResponseRedirect('admin_page/posts.html')
+
+# def catAll(request):
+# 	objects=Category.objects.all()
+# 	fields=Category.get_model_fields(Category)
+# 	context={
+# 		'object_list' : objects ,
+# 		 'fields' : fields ,
+# 		 'title' : "Categories"
+# 		 }
+# 	return render(request,'admin_page/category.html',context)
+
+# def catEdit(request,num):
+# 	cat_obj=Category.objects.filter(pk=num).first()
+# 	if(request.method=="POST"):
+# 		cat_form=CategoryForm(request.POST,instance=cat_obj)
+# 		if cat_form.is_valid():
+# 			cat_form.save()
+# 		return HttpResponseRedirect	("/admin_page/category")
+# 	else:
+# 		cat_form=CategoryForm(instance=cat_obj)
+# 		context={
+# 			'cat_form':cat_form,
+# 			'title':'Edit'
+# 			}
+		
+# 		return render(request,'admin/category.html',context)
+
+# def catDel(request,num):
+# 	cat_obj=Category.objects.filter(pk=num).first()
+# 	cat_obj.delete()
+# 	return HttpResponseRedirect("/admin_page/category")
+
+
+# def catAdd(request):
+# 	if request.method=="POST":
+# 		cat_form=CategoryForm(request.POST)
+# 		if cat_form.is_valid():
+# 			cat_form.save()
+# 		return HttpResponseRedirect("/admin_page/category")	
+# 	else:
+# 		cat_form=CategoryForm()
+# 		context={
+# 			'cat_form':cat_form,
+# 			'title':'Add'
+# 			}
+# 		return render(request,"admin_page/category.html",context)
