@@ -77,23 +77,21 @@ def catAll(request):
 	return render(request,'admin_page/category.html',context)
 
 def catEdit(request,num):
-	cat_obj=Category.objects.filter(pk=num).first()
+	cat_obj=Category.objects.get(id=num)
 	if(request.method=="POST"):
 		cat_form=CategoryForm(request.POST,instance=cat_obj)
 		if cat_form.is_valid():
 			cat_form.save()
-		return HttpResponseRedirect	("/admin_page/category")
+		return HttpResponseRedirect	("/admin_page/catAll")
 	else:
 		cat_form=CategoryForm(instance=cat_obj)
 		context={
 			'cat_form':cat_form,
-			'title':'Edit'
-			}
-		
-		return render(request,'admin/category.html',context)
+			'title':'Edit'}
+		return render(request,'admin/cat_add.html',context)
 
 def catDel(request,num):
-	cat_obj=Category.objects.filter(pk=num).first()
+	cat_obj=Category.objects.get(id=num)
 	cat_obj.delete()
 	return HttpResponseRedirect("/admin_page/catAll")
 
