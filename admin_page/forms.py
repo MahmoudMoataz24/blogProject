@@ -1,12 +1,13 @@
 from django import forms
-from blog.models import Comments,Likes,Post,userAdds,reply,Category
+from blog.models import *
 
-class PostForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
 	class Meta:
-		model = Post
-		fields = ('title','image','content','user_id')
-		widgets = {
-		'title' : forms.TextInput(attrs={'class':'form-control'}),
-		'image' : forms.FileInput(attrs={'class':'form-control-image'}),
-		'content' : forms.TextInput(attrs={'class':'form-control'}),
-		}
+		model=User
+		fields=('is_superuser','username','email','is_active')
+		# widgets = {'is_superuser': forms.TextInput( attrs={'class': 'form-control'}),'username': forms.TextInput( attrs={'class': 'form-control'}),'email': forms.TextInput( attrs={'class': 'form-control'}),'is_active': forms.TextInput( attrs={'class': 'form-control'})}
+
+# class PostForm(forms.ModelForm):
+# 	class Meta:
+# 		model=Post
+# 		fields=('title',)

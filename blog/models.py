@@ -20,19 +20,7 @@ class Post(models.Model):
    
     def __str__(self):
         return self.title
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     class Meta:
-=======
-     class Meta:
->>>>>>> 60498561d1399f2ea808737c97bb33648187e1b9
-=======
-    class Meta:
->>>>>>> sara
-=======
-    class Meta:
->>>>>>> ac06e2f14be7d1aab3ac3196709d2ac6f07d85c7
         ordering = ['-created']
 
 class Comments(models.Model):
