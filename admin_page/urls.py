@@ -11,8 +11,8 @@ urlpatterns = [
 	path('postadd',views.addPost),
 	path('postdel/<num>',views.delPost),
 	path('postedit/<num>',views.EditPost),
-	# path('catAll',views.catAll),
-	# path('catAdd',views.catAdd),
-	# path('catEdit/<num>',views.catEdit),
-	# path('catDel/<num>',views.catDel),
+	path('catAll',views.catAll),
+	path('catAdd',views.catAdd),
+	path('catEdit/<num>',views.catEdit),
+	path('catDel/<num>',views.catDel),
 ]

@@ -71,36 +71,36 @@ def delPost(request,num):
 	post.delete()
 	return HttpResponseRedirect('admin_page/posts.html')
 
-# def catAll(request):
-# 	objects=Category.objects.all()
-# 	fields=Category.get_model_fields(Category)
-# 	context={
-# 		'object_list' : objects ,
-# 		 'fields' : fields ,
-# 		 'title' : "Categories"
-# 		 }
-# 	return render(request,'admin_page/category.html',context)
+def catAll(request):
+	objects=Category.objects.all()
+	fields=Category.get_model_fields(Category)
+	context={
+		'object_list' : objects ,
+		 'fields' : fields ,
+		 'title' : "Categories"
+		 }
+	return render(request,'admin_page/category.html',context)
 
-# def catEdit(request,num):
-# 	cat_obj=Category.objects.filter(pk=num).first()
-# 	if(request.method=="POST"):
-# 		cat_form=CategoryForm(request.POST,instance=cat_obj)
-# 		if cat_form.is_valid():
-# 			cat_form.save()
-# 		return HttpResponseRedirect	("/admin_page/category")
-# 	else:
-# 		cat_form=CategoryForm(instance=cat_obj)
-# 		context={
-# 			'cat_form':cat_form,
-# 			'title':'Edit'
-# 			}
+def catEdit(request,num):
+	cat_obj=Category.objects.filter(pk=num).first()
+	if(request.method=="POST"):
+		cat_form=CategoryForm(request.POST,instance=cat_obj)
+		if cat_form.is_valid():
+			cat_form.save()
+		return HttpResponseRedirect	("/admin_page/category")
+	else:
+		cat_form=CategoryForm(instance=cat_obj)
+		context={
+			'cat_form':cat_form,
+			'title':'Edit'
+			}
 		
-# 		return render(request,'admin/category.html',context)
+		return render(request,'admin/category.html',context)
 
-# def catDel(request,num):
-# 	cat_obj=Category.objects.filter(pk=num).first()
-# 	cat_obj.delete()
-# 	return HttpResponseRedirect("/admin_page/category")
+def catDel(request,num):
+	cat_obj=Category.objects.filter(pk=num).first()
+	cat_obj.delete()
+	return HttpResponseRedirect("/admin_page/category")
 
 
 # def catAdd(request):
