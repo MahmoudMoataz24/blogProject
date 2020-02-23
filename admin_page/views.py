@@ -72,13 +72,8 @@ def delPost(request,num):
 	return HttpResponseRedirect('admin_page/posts.html')
 
 def catAll(request):
-	objects=Category.objects.all()
-	fields=Category.get_model_fields(Category)
-	context={
-		'object_list' : objects ,
-		 'fields' : fields ,
-		 'title' : "Categories"
-		 }
+	all_cat=Category.objects.all()
+	context = {'all_cat':all_cat}
 	return render(request,'admin_page/category.html',context)
 
 def catEdit(request,num):
@@ -100,19 +95,19 @@ def catEdit(request,num):
 def catDel(request,num):
 	cat_obj=Category.objects.filter(pk=num).first()
 	cat_obj.delete()
-	return HttpResponseRedirect("/admin_page/category")
+	return HttpResponseRedirect("/admin_page/catAll")
 
 
-# def catAdd(request):
-# 	if request.method=="POST":
-# 		cat_form=CategoryForm(request.POST)
-# 		if cat_form.is_valid():
-# 			cat_form.save()
-# 		return HttpResponseRedirect("/admin_page/category")	
-# 	else:
-# 		cat_form=CategoryForm()
-# 		context={
-# 			'cat_form':cat_form,
-# 			'title':'Add'
-# 			}
-# 		return render(request,"admin_page/category.html",context)
+def catAdd(request):
+	if request.method=="POST":
+		cat_form=CategoryForm(request.POST)
+		if cat_form.is_valid():
+			cat_form.save()
+		return HttpResponseRedirect("/admin_page/catAll")	
+	else:
+		cat_form=CategoryForm()
+		context={
+			'cat_form':cat_form,
+			'title':'Add'
+			}
+		return render(request,"admin_page/cat_add.html",context)

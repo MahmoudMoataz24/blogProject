@@ -9,7 +9,7 @@
 	<th>Category_id</th>
 	<th>Title</th>
 	<th colspan=2>Actions</th>
-	{%for st in all%}
+	{%for st in all_cat%}
 	<tr>
 		<td>{{st.id}}</td>
 		<td>{{st.title}}</td>
@@ -101,7 +101,7 @@
             </nav>
 </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="catadd" class="btn btn-sm btn-neutral">New</a>
+              <a href="catAdd" class="btn btn-sm btn-neutral">New</a>
               <a href="#" class="btn btn-sm btn-neutral">Filters</a>
             </div>
         </div>
