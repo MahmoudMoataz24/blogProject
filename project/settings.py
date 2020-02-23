@@ -32,9 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'register.apps.RegisterConfig',
     'blog.apps.BlogConfig',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # LOGIN_REDIRECT_URL = 'index'
+# CRISPY_TEMPLATE_PACK = 'bootstarp'

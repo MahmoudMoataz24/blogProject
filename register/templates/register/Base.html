@@ -20,6 +20,7 @@
 </head>
 
 <body>
+ {% block base %}
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -147,6 +148,8 @@
       </footer>
     </div>
   </div>
+
+{% endblock %}
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="../../static/register/vendor/jquery/dist/jquery.min.js"></script>
