@@ -85,10 +85,8 @@ def catEdit(request,num):
 		return HttpResponseRedirect	("/admin_page/catAll")
 	else:
 		cat_form=CategoryForm(instance=cat_obj)
-		context={
-			'cat_form':cat_form,
-			'title':'Edit'}
-		return render(request,'admin/cat_add.html',context)
+		context={'cat_form':cat_form}
+		return render(request,'admin_page/cat_add.html',context)
 
 def catDel(request,num):
 	cat_obj=Category.objects.get(id=num)
@@ -108,4 +106,4 @@ def catAdd(request):
 			'cat_form':cat_form,
 			'title':'Add'
 			}
-		return render(request,"admin_page/cat_add.html",context)
+		return render(request,"/admin_page/cat_add.html",context)
