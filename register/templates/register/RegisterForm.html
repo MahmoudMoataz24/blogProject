@@ -1,6 +1,11 @@
-{#{% extends 'register/Base.html' %}#}
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
-</form>
+{% extends 'register/register.html' %}
+
+{% block register_form %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}
+

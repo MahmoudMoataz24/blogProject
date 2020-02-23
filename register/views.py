@@ -1,7 +1,12 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
+from django.template.defaulttags import url
 
 from register.form import RegisterForm
+
+
+def index(request):
+    return render(request, 'register/Index.html')
 
 
 def register(request):
@@ -9,7 +14,7 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('<h1>Registered</h1>')
+            return HttpResponseRedirect('../login/')
         else:
             return HttpResponse('<h1>Invalid</h1>')
     else:
