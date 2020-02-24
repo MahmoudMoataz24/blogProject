@@ -3,11 +3,16 @@ from admin_page import views
 from django.urls import path,include
 
 urlpatterns = [
+<<<<<<< HEAD
 	path('posts',views.viewPost),
+=======
+	path('posts',views.Post),
+>>>>>>> develop
 	path('all',views.viewAll),
 	path('delst/<num>',views.deleteUser),
 	path('editst/<num>',views.EditUser),
 	path('addst',views.addUser),
+<<<<<<< HEAD
 	path('postadd',views.addPost),
 	path('postdel/<num>',views.delPost),
 	path('postedit/<num>',views.EditPost),
@@ -15,4 +20,6 @@ urlpatterns = [
 	path('catAdd',views.catAdd),
 	path('catEdit/<num>',views.catEdit),
 	path('catDel/<num>',views.catDel),
+=======
+>>>>>>> develop
 ]
