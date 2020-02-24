@@ -11,13 +11,6 @@ class LoginForm(AuthenticationForm):
         model = User
         fields = ['username', 'password', 'remember_me']
 
-    def save(self, commit=True):
-        user = super(UserCreationForm, self).save(commit=False)
-        user.email = self.cleaned_data["email"]
-        if commit:
-            user.save()
-        return user
-
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -29,7 +22,8 @@ class RegisterForm(UserCreationForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
     def clean(self):
+        username = self.cleaned_data.get('username')
         email = self.cleaned_data.get('email')
-        if User.objects.filter(email=email).exists():
-            raise ValidationError("Email exists")
+        if User.objects.filter(email=email).exists() or User.objects.filter(username=username).exists():
+            raise ValidationError('This user already existed')
         return self.cleaned_data
