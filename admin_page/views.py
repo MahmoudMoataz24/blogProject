@@ -106,4 +106,4 @@ def catAdd(request):
 			'cat_form':cat_form,
 			'title':'Add'
 			}
-		return render(request,"/admin_page/cat_add.html",context
+		return render(request,"/admin_page/cat_add.html",context)

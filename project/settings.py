@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'user',
+    'admin_page',
     'crispy_forms',
     'register.apps.RegisterConfig',
     'blog.apps.BlogConfig',
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'admin_page/template')],
+        'DIRS': [os.path.join(BASE_DIR,'user/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
