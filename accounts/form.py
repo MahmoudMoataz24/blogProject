@@ -11,6 +11,13 @@ class LoginForm(AuthenticationForm):
         model = User
         fields = ['username', 'password', 'remember_me']
 
+    def save(self, commit=True):
+        user = super(UserCreationForm, self).save(commit=False)
+        user.email = self.cleaned_data["email"]
+        if commit:
+            user.save()
+        return user
+
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()

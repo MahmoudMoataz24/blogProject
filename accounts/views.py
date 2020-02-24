@@ -7,7 +7,7 @@ from accounts.form import RegisterForm, LoginForm
 
 @login_required
 def index(request):
-    return render(request, 'accounts/Index.html', {})
+    return HttpResponse("<h1>Home</h1>")
 
 
 def login(request):
@@ -25,4 +25,4 @@ def register(request):
             return redirect('login')
     else:
         return render(request, 'accounts/register.html', {'form': RegisterForm})
-    return render(request, 'accounts/register.html', {'form': form})
+    # return render(request, 'accounts/register.html', {'form': form})
