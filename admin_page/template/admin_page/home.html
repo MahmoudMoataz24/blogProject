@@ -1,0 +1,35 @@
+{%extends 'admin_page/base.html'%}
+<!-- {%load static%} -->
+{%block main_block%}
+<div class="card-body">
+<div class="table-responsive">
+<table border=1 align="center">
+	<th>ID</th>
+	<th>UserName</th>
+	<th>Email</th>
+	<th> isAdmin</th>
+	<th>isSuperUser</th>
+	<th>Date_joined</th>
+	<th colspan=2>Actions</th>
+	{%for st in all%}
+	<tr>
+		<td>{{st.id}}</td>
+		<td>{{st.username}}</td>
+		<td>{{st.email}}</td>
+		<td>{{st.is_active}}</td>
+		<td>{{st.is_superuser}}</td>
+		<td>{{st.date_joined}}</td>
+		<td><a href="editst/{{st.id}}">Edit</a></td>
+		<td><a href="delst/{{st.id}}">Delete</a></td>
+	</tr>
+	{%endfor%}
+</table> 
+</div>
+</div>
+{%endblock%}
+{%block content_block%}
+<<<<<<< HEAD
+{%include 'admin_page/header.html'%}
+=======
+>>>>>>> develop
+{%endblock%}
