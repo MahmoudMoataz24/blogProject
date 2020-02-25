@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <title>Argon Blog</title>
   <!-- Favicon -->
   <link rel="icon" href="{%static 'assets/img/brand/favicon.png'%}" type="image/png">
   <!-- Fonts -->
@@ -19,12 +19,14 @@
   <link rel="stylesheet" href="{%static 'assets/css/argon.css'%}" type="text/css">
 </head>
 <body>
+{%block sidebar%}
 {%include 'admin_page/sidenav.html'%}
+{%endblock%}
 {%block content_block%}
-<<<<<<< HEAD
 {%include 'admin_page/header.html'%}
-=======
->>>>>>> develop
+{%endblock%}
+{%block main_block%}
+{%endblock%}
 <script src="{%static 'assets/vendor/jquery/dist/jquery.min.js'%}"></script>
   <script src="{%static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
   <script src="{%static 'assets/vendor/js-cookie/js.cookie.js'%}"></script>
@@ -35,14 +37,5 @@
   <script src="{%static 'assets/vendor/chart.js/dist/Chart.extension.js'%}"></script>
   <!-- Argon JS -->
   <script src="{%static 'assets/js/argon.js?v=1.2.0'%}"></script>
-{%endblock%}
-<<<<<<< HEAD
-
-=======
-{%include 'admin_page/header.html'%}
->>>>>>> develop
-{%block main_block%}
-{%endblock%}
-
 </body>
 </html>

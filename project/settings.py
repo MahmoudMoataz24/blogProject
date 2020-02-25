@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_page',
     'register.apps.RegisterConfig',
     'blog.apps.BlogConfig',
 

@@ -3,23 +3,17 @@ from admin_page import views
 from django.urls import path,include
 
 urlpatterns = [
-<<<<<<< HEAD
-	path('posts',views.viewPost),
-=======
-	path('posts',views.Post),
->>>>>>> develop
-	path('all',views.viewAll),
-	path('delst/<num>',views.deleteUser),
-	path('editst/<num>',views.EditUser),
-	path('addst',views.addUser),
-<<<<<<< HEAD
-	path('postadd',views.addPost),
-	path('postdel/<num>',views.delPost),
-	path('postedit/<num>',views.EditPost),
-	path('catAll',views.catAll),
-	path('catAdd',views.catAdd),
-	path('catEdit/<num>',views.catEdit),
-	path('catDel/<num>',views.catDel),
-=======
->>>>>>> develop
+	path('home/',views.catshow),
+	path('home/posts',views.viewPost),
+	path('home/all',views.viewAll),
+	path('home/delst/<num>',views.deleteUser),
+	path('home/editst/<num>',views.EditUser),
+	path('home/addst',views.addUser),
+	path('home/postadd',views.addPost),
+	path('home/postdel/<num>',views.delPost),
+	path('home/postedit/<num>',views.EditPost),
+	path('home/catAll',views.catAll),
+	path('home/catAdd',views.catAdd),
+	path('home/catEdit/<num>',views.catEdit),
+	path('home/catDel/<num>',views.catDel),
 ]
