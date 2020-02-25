@@ -13,14 +13,14 @@ class Category (models.Model):
 
 
 class Post(models.Model):
-    category = models.ForeignKey(Category, on_delete = models.CASCADE)
+    category = models.ForeignKey(Category,null=True, on_delete = models.CASCADE)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     updated = models.DateTimeField(auto_now= True)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     tagName = models.CharField(max_length= 30)
-    UserID = models.ForeignKey(User , on_delete = models.CASCADE)
+    UserID = models.ForeignKey(User,null=True,on_delete = models.CASCADE)
     # status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -36,7 +36,7 @@ class Comments(models.Model):
     postID=models.ForeignKey(Post, on_delete=models.CASCADE)
     
     def __str__(self):
-        return 'Comment {} by {}'.format(self.content, self.userID)        
+        return 'Comment {}'.format(self.content)        
 
 class reply(models.Model):
     slug=models.SlugField(max_length=200)
