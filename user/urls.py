@@ -4,6 +4,7 @@ from user import views
 
 urlpatterns = [
     
-    path('viewall/',views.viewPost),
+    path('viewall/<int:postID>',views.viewPost),
+    
     
 ]

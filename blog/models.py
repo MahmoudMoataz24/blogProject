@@ -33,7 +33,8 @@ class Comments(models.Model):
     content=models.TextField()
     createTime=models.DateTimeField(auto_now_add=True)
     userID=models.ForeignKey(User, on_delete=models.CASCADE)
-    postID=models.ForeignKey(Post, on_delete=models.CASCADE)
+    postID=models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    active = models.BooleanField(default= False)
     
     def __str__(self):
         return 'Comment {}'.format(self.content)        
