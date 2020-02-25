@@ -4,14 +4,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.exceptions import ValidationError
 
 
-class LoginForm(AuthenticationForm):
-    remember_me = forms.BooleanField(required=False, widget=forms.CheckboxInput())
-
-    class Meta:
-        model = User
-        fields = ['username', 'password', 'remember_me']
-
-
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
     first_name = forms.CharField(max_length=30, required=True)

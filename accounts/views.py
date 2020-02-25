@@ -3,14 +3,17 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
-from accounts.form import RegisterForm, LoginForm
+from accounts.form import RegisterForm
 from django.core.mail import send_mail
 from django.conf import settings
-
 
 @login_required
 def index(request):
     return HttpResponse("<h1>Home</h1>")
+
+
+def forget_password(request):
+    pass
 
 
 def register(request):
@@ -28,3 +31,5 @@ def register(request):
             return render(request, 'accounts/register.html', {'form': form})
     else:
         return render(request, 'accounts/register.html', {'form': RegisterForm})
+
+
