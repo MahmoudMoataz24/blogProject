@@ -1,25 +1,24 @@
 {%extends 'admin_page/base.html'%}
 <!-- {%load static%} -->
 {%load static %}
-
 {%block main_block%}
 <div class="card-body">
-<div class="table-responsive">
-<table border=1 align="center">
+<table border=1 align="center" class="table" style="width: 50%">
+  <thead class="thead-dark">
 	<th>Category_id</th>
 	<th>Title</th>
 	<th colspan=2>Actions</th>
+</thead>
 	{%for st in all_cat%}
 	<tr>
 		<td>{{st.id}}</td>
 		<td>{{st.title}}</td>
-		<td><a href="catEdit/{{st.id}}">Edit</a></td>
-		<td><a href="catDel/{{st.id}}">Delete</a></td>
+		<td><a href="catEdit/{{st.id}}"><i class="fas fa-pen"></i></a></td>
+		<td><a href="catDel/{{st.id}}"><i class="fas fa-trash"></i></a></td>
 	</tr>
 	{%endfor%}
-</table> 
-</div>
-</div>
+</table>
+</div> 
 {%endblock%}
 {%block content_block%}
 <div class="main-content" id="panel">
@@ -101,7 +100,6 @@
 </div>
             <div class="col-lg-6 col-5 text-right">
               <a href="catAdd" class="btn btn-sm btn-neutral">New</a>
-              <a href="#" class="btn btn-sm btn-neutral">Filters</a>
             </div>
         </div>
         </div>

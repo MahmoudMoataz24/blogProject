@@ -14,6 +14,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category,null=True,on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
+    image = models.ImageField()
     updated = models.DateTimeField(auto_now= True)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
@@ -40,5 +41,6 @@ class reply(models.Model):
 class Likes(models.Model):
     userID=models.ForeignKey(User,on_delete=models.CASCADE)
     postID=models.ForeignKey(Post,on_delete=models.CASCADE)
+    likes=models.BooleanField()
 
 

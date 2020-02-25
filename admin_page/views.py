@@ -14,7 +14,7 @@ def addUser(request):
 		user_form = UserForm(request.POST)
 		if user_form.is_valid():
 			user_form.save()
-		return HttpResponseRedirect("/admin_page/all")
+		return HttpResponseRedirect("/admin_page/home/all")
 	else:
 		user_form =UserForm() 
 		context = {'user_form':user_form}
@@ -26,7 +26,7 @@ def EditUser(request,num):
 		user_form=UserForm(request.POST,instance=user)
 		if user_form.is_valid():
 			user_form.save()
-		return HttpResponseRedirect("/admin_page/all")
+		return HttpResponseRedirect("/admin_page/home/all")
 	else:
 		user_form=UserForm(instance=user)
 		context={'user_form':user_form}
@@ -35,7 +35,12 @@ def EditUser(request,num):
 def deleteUser(request,num):
 	user = User.objects.get(id = num)
 	user.delete()
-	return HttpResponseRedirect('/admin_page/posts')
+	return HttpResponseRedirect('/admin_page/home/all')
+
+# def userSearch(request,name):
+# 	user=User.objects.filter(username__contains=name)
+# 	context = {'user_form':user_form}
+# 	return render(request,'admin_page/st')
 
 def viewPost(request):
 	all_posts = Post.objects.all()
@@ -54,7 +59,7 @@ def addPost(request):
 		post_form = PostForm(request.POST)
 		if post_form.is_valid():
 			post_form.save()
-		return HttpResponseRedirect("admin_page/posts")
+		return HttpResponseRedirect("/admin_page/home/posts")
 	else:
 		post_form =PostForm() 
 		context = {'post_form':post_form}
@@ -66,7 +71,7 @@ def EditPost(request,num):
 		form = PostForm(request.POST,instance=post)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('admin_page/posts.html')
+			return HttpResponseRedirect('admin_page/home/posts')
 	else:
 		form = PostForm(instance=post)
 		context ={'form':form}
@@ -75,7 +80,7 @@ def EditPost(request,num):
 def delPost(request,num):
 	post= Post.objects.get(id=num)
 	post.delete()
-	return HttpResponseRedirect('admin_page/posts.html')
+	return HttpResponseRedirect('/admin_page/home/posts')
 
 def catAll(request):
 	all_cat=Category.objects.all()
@@ -93,7 +98,7 @@ def catEdit(request,num):
 		cat_form=CategoryForm(request.POST,instance=cat_obj)
 		if cat_form.is_valid():
 			cat_form.save()
-		return HttpResponseRedirect	("/admin_page/catAll")
+		return HttpResponseRedirect	("/admin_page/home/catAll")
 	else:
 		cat_form=CategoryForm(instance=cat_obj)
 		context={'cat_form':cat_form}
@@ -102,7 +107,7 @@ def catEdit(request,num):
 def catDel(request,num):
 	cat_obj=Category.objects.get(id=num)
 	cat_obj.delete()
-	return HttpResponseRedirect("/admin_page/catAll")
+	return HttpResponseRedirect("/admin_page/home/catAll")
 
 
 def catAdd(request):
@@ -110,7 +115,7 @@ def catAdd(request):
 		cat_form=CategoryForm(request.POST)
 		if cat_form.is_valid():
 			cat_form.save()
-		return HttpResponseRedirect("/admin_page/catAll")	
+		return HttpResponseRedirect("/admin_page/home/catAll")	
 	else:
 		cat_form=CategoryForm()
 		context={
@@ -118,3 +123,7 @@ def catAdd(request):
 			'title':'Add'
 			}
 		return render(request,"admin_page/cat_add.html",context)
+
+# def userSearch(request,username):
+
+

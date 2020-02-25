@@ -10,7 +10,7 @@ class UserForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
 	class Meta:
 		model=Post
-		fields=('title','content','slug')
+		fields=('category','image','title','content','slug')
 
 class CategoryForm(forms.ModelForm):
 	class Meta:
