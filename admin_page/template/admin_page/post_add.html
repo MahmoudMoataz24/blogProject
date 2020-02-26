@@ -39,7 +39,7 @@
 {%endblock%}
 {%block main_block%}
 <div align="center">
-<div class="card text-white bg-info" style="width: 30rem;" align="center">
+<div class="card text-white bg-info" style="width: 30rem;" align="left">
 	<div class="card-header">
     <h2 class="card-title">Add Post</h2>
   </div>
@@ -47,6 +47,7 @@
 <form method="POST">{%csrf_token%}
 	<div class="form-group">
 	{{post_form.as_p}}
+  {{post_form.non_fields_errors.as_text}}
 	<button type="submit" class="btn btn-info">Save</button>
 </div>
 </form>

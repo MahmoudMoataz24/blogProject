@@ -10,15 +10,12 @@ def viewAll(request):
 	return render(request,'admin_page/home.html',context)
 
 def addUser(request):
-	if request.method == "POST":
-		user_form = UserForm(request.POST)
-		if user_form.is_valid():
-			user_form.save()
+	user_form = UserForm(request.POST or None)
+	if user_form.is_valid():
+		user_form.save()
 		return HttpResponseRedirect("/admin_page/home/all")
-	else:
-		user_form =UserForm() 
-		context = {'user_form':user_form}
-		return render(request,'admin_page/st_add.html',context)
+	context = {'user_form':user_form}
+	return render(request,'admin_page/st_add.html',context)
 
 def EditUser(request,num):
 	user=User.objects.get(id = num)
@@ -26,7 +23,7 @@ def EditUser(request,num):
 		user_form=UserForm(request.POST,instance=user)
 		if user_form.is_valid():
 			user_form.save()
-		return HttpResponseRedirect("/admin_page/home/all")
+			return HttpResponseRedirect("/admin_page/home/all")
 	else:
 		user_form=UserForm(instance=user)
 		context={'user_form':user_form}
@@ -55,8 +52,11 @@ def viewPo(request):
 	return render(request,'admin_page/admin_home.html',context)
 
 def addPost(request):
+	# print('first')
 	if request.method == "POST":
-		post_form = PostForm(request.POST)
+		# print('second')
+		post_form = PostForm(request.POST,request.FILES)
+		post_form.clean()
 		if post_form.is_valid():
 			post_form.save()
 		return HttpResponseRedirect("/admin_page/home/posts")
