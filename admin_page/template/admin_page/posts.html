@@ -42,11 +42,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
-                <input class="form-control" placeholder="Search" type="text">
+                <form method="GET" action="search">
+                  <input class = "form-control" type="text" name="q" placeholder="search" value= '{{ request.GET.q }}'/>
+                  <!-- <input type="submit" value="Search"/> -->
+                </form>
               </div>
             </div>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
+              <!-- <span aria-hidden="true">×</span> -->
             </button>
           </form>
           <!-- Navbar links -->

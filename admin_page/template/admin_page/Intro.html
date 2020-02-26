@@ -1,0 +1,55 @@
+{%extends 'admin_page/base.html'%}
+{%load static%}
+{%block main_block%}
+<div class="col-md-8 mt-3 center">
+<div class="col-md-8 mt-3 center">
+                {% for post in posts %}
+                <div class="card mb-4" >
+                  <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <!-- {%if post.userID != null%}
+                    {%endif%} -->
+                    <p class="card-text text-muted h6">{{ User.username}} | {{ post.created}} </p>
+
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                  </div>
+                 
+                </div>
+                {% endfor %}
+            </div>
+</div>
+{%endblock%}
+{%block content_block%}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        <img alt="Brand" src="{%static 'assets/img/brand/blue.png'%}" style="size: 50%;">
+ </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{%endblock%}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+  </div>
+</nav>
+{%block sidebar%}
+{%endblock%}

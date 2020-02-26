@@ -1,23 +1,27 @@
 from django import forms
-from blog.models import *
+from .models import *
 
 class UserForm(forms.ModelForm):
 	class Meta:
 		model=User
-		fields=('is_superuser','username','email','is_active','password')
+		fields=('is_superuser','username','email','is_active')
 
 	def clean_username(self):
-		print('hana')
 		username = self.cleaned_data['username'].lower()
 		if User.objects.filter(username=username).exists():
-			print('hana kman')
 			raise forms.ValidationError('Username is already in use.')
 		return username
+
+	def clean_email(self):
+		email = self.cleaned_data['email'].lower()
+		if User.objects.filter(email=email).exists():
+			raise forms.ValidationError('Email is already in use.')
+		return email
 
 class PostForm(forms.ModelForm):
 	class Meta:
 		model=Post
-		fields=('category','image','title','content','slug','tagName')
+		fields=('category','title','content','slug','tagName')
 	# def cleaned_data(self):
 	# 	if('image' in request.FILES):
 	# 		image = request.FILES['image']
@@ -36,3 +40,13 @@ class CategoryForm(forms.ModelForm):
 	class Meta:
 		model=Category
 		fields=('title',)
+
+class ForbiddenForm(forms.ModelForm):
+	class Meta:
+		model = forbiddenWord
+		fields = ('word',)
+
+# class CommentForm(forms.ModelForm):
+#     class Meta:
+#         model = Comments
+        # fields = ('name', 'email', 'body')

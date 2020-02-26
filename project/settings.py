@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'admin_page',
     'register.apps.RegisterConfig',
-    'blog.apps.BlogConfig',
+    # 'blog.apps.BlogConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -73,6 +73,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, '/media') 
+MEDIA_URL = '/media/'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
