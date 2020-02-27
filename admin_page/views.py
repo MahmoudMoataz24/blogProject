@@ -170,15 +170,12 @@ def viewPost(request):
 		return render(request,'admin_page/posts.html',context)
 
 def addPost(request):
-	if request.method == "POST":
-		post_form = PostForm(request.POST,request.FILES)
-		if post_form.is_valid():
-			post_form.save()
+	post_form = PostForm(request.POST,request.FILES)
+	if post_form.is_valid():
+		post_form.save()
 		return HttpResponseRedirect("/admin_page/home/posts")
-	else:
-		post_form =PostForm() 
-		context = {'post_form':post_form}
-		return render(request,'admin_page/post_add.html',context)
+	context = {'post_form':post_form}
+	return render(request,'admin_page/post_add.html',context)
 
 def EditPost(request,num):
 	post = Post.objects.get(id=num)
