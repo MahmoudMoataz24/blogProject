@@ -1,0 +1,55 @@
+[33mcommit dc9578cbd2c74dc41a1e5a290bd8fe51a3a40f67[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Author: andrew <andrewnagynemr@gmail.com>
+Date:   Thu Feb 27 17:31:19 2020 +0200
+
+    fixing bug
+
+[33mcommit 201181b952dc5679b95ca3e34a3958782301f199[m
+Author: Sara Yasser <Sarayasser@users.noreply.github.com>
+Date:   Wed Feb 19 23:18:08 2020 +0200
+
+    Update models.py
+
+[33mcommit 6217eebe0964ddd09c7256a9f816652c2ac35992[m
+Merge: d97cf67 d8ad008
+Author: sarayasser <sarayasser2008@hotmail.com>
+Date:   Wed Feb 19 23:10:43 2020 +0200
+
+    Merge branch 'marina' of https://github.com/Sarayasser/blogProject into marina
+
+[33mcommit d97cf670e4966f2493d20e09b34453e5390df886[m
+Merge: 2f3e436 4d1b390
+Author: sarayasser <sarayasser2008@hotmail.com>
+Date:   Wed Feb 19 22:42:31 2020 +0200
+
+    resolved conflict
+
+[33mcommit d8ad008f2dc602654a0c5445ac24602920316495[m
+Author: marina00matta <marinamedhat_19@hotmail.com>
+Date:   Wed Feb 19 22:24:45 2020 +0200
+
+    adding post and category to models
+
+[33mcommit 2f3e436d99a6ef6f98105757fe218057d5df8eee[m
+Author: sarayasser <sarayasser2008@hotmail.com>
+Date:   Wed Feb 19 21:43:50 2020 +0200
+
+    a
+
+[33mcommit 4d1b390ce6a679b2f755722b37db6966ab2a4cb3[m
+Author: andrew <andrewnagynemr@gmail.com>
+Date:   Wed Feb 19 20:14:20 2020 +0200
+
+    Adding userAdds models that extends User feature => isAdmin & canInteract
+
+[33mcommit 79dbb3de4153e220410a2352561c354397f31e56[m
+Author: Sara Yasser <Sarayasser@users.noreply.github.com>
+Date:   Wed Feb 19 18:26:51 2020 +0200
+
+    Create README.md
+
+[33mcommit 98fb6894df6dfc1692b6c2eca6ff6e6667baafeb[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: sarayasser <sarayasser2008@hotmail.com>
+Date:   Wed Feb 19 18:15:41 2020 +0200
+
+    template

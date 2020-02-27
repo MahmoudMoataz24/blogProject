@@ -1,0 +1,19 @@
+{#{% extends 'accounts/Base.html' %}#}
+{% block main %}
+    <form method="get">
+        <fieldset class="form-group">
+            <legend class="boarder-bottom mb-4">Welcome!</legend>
+            {% csrf_token %}
+            {{ form }}
+        </fieldset>
+        <div id='signin' class="text-center">
+          <button type="submit" class="btn btn-primary mt-4">Confirm</button>
+        </div>
+    </form>
+        <div class="pt-3">
+            <small class="text-muted">Don't have an account?<a class="ml-2" href="{% url 'register' %}">SignUp</a> </small>
+        </div>
+            <div class="pt-3">
+            <small class="text-muted">Forget Password?<a class="ml-2" href="{% url 'password_reset' %}">Click here</a> </small>
+        </div>
+{% endblock %}

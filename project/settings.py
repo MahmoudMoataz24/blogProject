@@ -9,10 +9,16 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'OSBLOG.opensource40@gmail.com'
+EMAIL_HOST_PASSWORD = 'testpassword12345'
+EMAIL_PORT = 587
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.conf.global_settings import LOGIN_REDIRECT_URL
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -27,11 +33,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    'blog',
+    'accounts',
+    'crispy_forms',
+    'admin_page',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +62,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates'),os.path.join(BASE_DIR,'admin_page/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +77,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, '/media') 
+MEDIA_URL = '/media/'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -119,3 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'home'

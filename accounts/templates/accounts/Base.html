@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>Argon Blog</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../../static/accounts/img/brand/favicon.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="../../static/accounts/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="../../static/accounts/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Page plugins -->
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="../../static/accounts/css/argon.css?v=1.2.0" type="text/css">
+
+    <style>
+
+        #id_password, #id_username, #id_first_name, #id_last_name, #id_email, #id_password1, #id_password2{
+            width: 300px;
+        }
+        .checkbox{
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+        #hint_id_username, #hint_id_password2{
+            font-size: 10px;
+        }
+        #div_id_password1 ul{
+            font-size: 10px;
+            list-style-type: none;
+            padding: 0;
+        }
+        #welcome{
+            font-size: 70px;
+        }
+        #welcomeParagraph{
+            font-size: 35px;
+        }
+        #error_1_id_password2,#error_2_id_password2,#error_3_id_password2,#error_4_id_password2{
+            color: red;
+        }
+
+
+    </style>
+</head>
+
+<body class="bg-default">
+  <!-- Navbar -->
+  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="../../static/accounts/img/brand/white.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="{% url 'index' %}">
+                <img src="../../static/accounts/img/brand/blue.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="nav-link">
+              <span class="nav-link-inner--text">Login</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'register' %}" class="nav-link">
+              <span class="nav-link-inner--text">Register</span>
+            </a>
+          </li>
+        </ul>
+        <hr class="d-lg-none" />
+      </div>
+    </div>
+  </nav>
+    <!-- Main content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+              <h1 id="welcome" class="text-white">OS BLOG!</h1>
+                <p id="welcomeParagraph" class="text-lead text-white">Come for what you love.</p>
+                <p id="welcomeParagraph" class="text-lead text-white">Stay for what you discover.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+            <div class="card bg-secondary border-0 mb-0">
+                <div class="card-body px-lg-5 py-lg-5">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% block main %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <footer class="py-5" id="footer-main"></footer>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="../../static/accounts/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../../static/accounts/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../static/accounts/vendor/js-cookie/js.cookie.js"></script>
+  <script src="../../static/accounts/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="../../static/accounts/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <!-- Optional JS -->
+  <script src="../../static/accounts/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="../../static/accounts/vendor/chart.js/dist/Chart.extension.js"></script>
+  <!-- Argon JS -->
+  <script src="../../static/accounts/js/argon.js?v=1.2.0"></script>
+</body>
+
+</html>
