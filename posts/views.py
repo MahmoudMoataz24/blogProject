@@ -13,6 +13,10 @@ def showSinglePost(request, postID):
     post = Post.objects.get(id=postID)
     comments = Comments.objects.filter(postID_id=postID)
     cats = Category.objects.all()
+    likeCount = Likes.objects.filter(postID_id=postID, isLiked=False).count()
+    if likeCount == 10:
+        Post.objects.get(id=postID).delete()
+        return HttpResponseRedirect('/posts/')
 
     data = []
     for comment in comments:
