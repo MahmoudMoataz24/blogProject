@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08c7445f-31a6-4de1-997c-94e75d5c0657" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/admin_page/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_page/template/admin_page/Intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page/template/admin_page/Intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_page/template/admin_page/admin_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page/template/admin_page/admin_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_page/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_page/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/views.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YBJldOqShmJrmsBQ1MrjOFLWKi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/register/static/register/css" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/register/static/register/css" />
+      <recent name="$PROJECT_DIR$/register/static/register" />
+      <recent name="$PROJECT_DIR$/register/" />
+      <recent name="$PROJECT_DIR$/register/templates/register" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.blogProject">
+    <configuration name="Test: register.static.img" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blogProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="register.static.img" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="blogProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/settings.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="blogProject" type="Python.DjangoServer" factoryName="Django server">
+      <module name="blogProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="project.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.settings" />
+        <item itemvalue="Django tests.Test: register.static.img" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08c7445f-31a6-4de1-997c-94e75d5c0657" name="Default Changelist" comment="" />
+      <created>1582410205534</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582410205534</updated>
+      <workItem from="1582410208685" duration="3057000" />
+      <workItem from="1582414234001" duration="769000" />
+      <workItem from="1582451051466" duration="5451000" />
+      <workItem from="1582464197505" duration="67088000" />
+      <workItem from="1582646945440" duration="12502000" />
+      <workItem from="1582661929761" duration="366000" />
+      <workItem from="1582663337411" duration="8355000" />
+      <workItem from="1582709418956" duration="26000" />
+      <workItem from="1582808127564" duration="105000" />
+      <workItem from="1582812360466" duration="4309000" />
+    </task>
+    <task id="LOCAL-00001" summary="CSS modifications for the Login and register templates">
+      <created>1582569398418</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582569398419</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CSS modifications for the Login and register templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS modifications for the Login and register templates" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="449" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582664562472">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="449" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1299.741@67.27.1299.741" timestamp="1582664562472" />
+    <state x="452" y="252" width="518" height="289" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1582473935980">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="452" y="252" width="518" height="289" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/67.27.1299.741@67.27.1299.741" timestamp="1582473935980" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1582569398129">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1582569398129" />
+    <state x="494" y="140" width="424" height="513" key="FileChooserDialogImpl" timestamp="1582476421847">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="494" y="140" width="424" height="513" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1582476421847" />
+    <state width="1253" height="181" key="GridCell.Tab.0.bottom" timestamp="1582816212588">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="181" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1582816212588" />
+    <state width="1253" height="181" key="GridCell.Tab.0.center" timestamp="1582816212588">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="181" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1582816212588" />
+    <state width="1253" height="181" key="GridCell.Tab.0.left" timestamp="1582816212587">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="181" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1582816212587" />
+    <state width="1253" height="181" key="GridCell.Tab.0.right" timestamp="1582816212588">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="181" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1582816212588" />
+    <state width="1253" height="219" key="GridCell.Tab.1.bottom" timestamp="1582476888211">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.bottom/67.27.1299.741@67.27.1299.741" timestamp="1582476888211" />
+    <state width="1253" height="219" key="GridCell.Tab.1.center" timestamp="1582476888210">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.center/67.27.1299.741@67.27.1299.741" timestamp="1582476888210" />
+    <state width="1253" height="219" key="GridCell.Tab.1.left" timestamp="1582476888210">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.left/67.27.1299.741@67.27.1299.741" timestamp="1582476888210" />
+    <state width="1253" height="219" key="GridCell.Tab.1.right" timestamp="1582476888210">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1582476888210" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1582812361561">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1582812361561" />
+    <state x="380" y="86" width="662" height="620" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582663722209">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="380" y="86" width="662" height="620" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1299.741@67.27.1299.741" timestamp="1582663722209" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582816354536">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1582816354536" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/blogProject$Test__register_static_img.coverage" NAME="Test: register.static.img Coverage Results" MODIFIED="1582471976967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blogProject$settings.coverage" NAME="settings Coverage Results" MODIFIED="1582476843982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/project" />
+  </component>
+</project>
