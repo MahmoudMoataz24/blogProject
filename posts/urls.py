@@ -7,8 +7,8 @@ urlpatterns = [
     # url(r'^(?P<catID>[\w])/$', views.categories),
     path('cats/', views.categories, name='categories'),
     url(r'^cats/(?P<catID>[\w])/$', views.showcatPosts),
-    url(r'^(?P<postID>[\w])/(?P<postTitle>[\w]+)/$', views.liked),
-    url(r'^(?P<postID>[\w])/(?P<postTitle>[\w]+)/d/$', views.disliked),
+    # url(r'^(?P<postID>[\w])/(?P<postTitle>[\w]+)/$', views.liked),
+    # url(r'^(?P<postID>[\w])/(?P<postTitle>[\w]+)/d/$', views.disliked),
 ]
 
 #   url(r'^cats/(?P<catID>[\w])/(?P<postID>[\w])/$', views.liked),
