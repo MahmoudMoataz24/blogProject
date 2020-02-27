@@ -24,3 +24,18 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created']
+
+class Comments(models.Model):
+    content = models.TextField()
+    createTime = models.DateTimeField(auto_now_add=True)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+    postID = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.content, self.userID)
+
+
+class reply(models.Model):
+    slug = models.SlugField(max_length=200)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    comId = models.ForeignKey(Comments, on_delete=models.CASCADE)
