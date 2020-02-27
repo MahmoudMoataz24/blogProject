@@ -52,3 +52,21 @@ def showcatPosts(request, catID):
     #     data.append(dic)
     context = {'posts': posts, 'cats': cat}
     return render(request, 'posts/select.html', context)
+
+
+def liked(request, postID, postTitle):
+    post = Post.objects.get(id=postID)
+    print('idddddddddddddddd='+postID)
+    print('idddddddddddddddd='+postTitle)
+
+    currentUser = request.user.id
+    try:
+        like, created = Likes.objects.get_or_create(
+            postID_id=postID, userID_id=currentUser, isLiked=True)
+        Likes.objects.filter(
+            postID_id=postID, userID_id=currentUser, isLiked=False).delete()
+    except Exception as e:
+        pass
+    finally:
+        likesDic = {'post': post, 'user': currentUser}
+        return HttpResponseRedirect('/posts/'+postID)
