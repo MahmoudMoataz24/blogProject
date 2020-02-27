@@ -70,3 +70,20 @@ def liked(request, postID, postTitle):
     finally:
         likesDic = {'post': post, 'user': currentUser}
         return HttpResponseRedirect('/posts/'+postID)
+
+
+def disliked(request, postID, postTitle):
+    post = Post.objects.get(id=postID)
+    print('dislikeeeeeeeeed')
+    currentUser = request.user.id
+    try:
+        dislike, created = Likes.objects.get_or_create(
+            postID_id=postID, userID_id=currentUser, isLiked=False)
+        Likes.objects.filter(
+            postID_id=postID, userID_id=currentUser, isLiked=True).delete()
+
+    except Exception as e:
+        pass
+    finally:
+        likesDic = {'post': post, 'user': currentUser}
+        return HttpResponseRedirect('/posts/'+postID)
