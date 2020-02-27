@@ -22,31 +22,13 @@ class PostForm(forms.ModelForm):
 	class Meta:
 		model=Post
 		fields=('category','image','title','content','slug','tagName')
-	# def clean_image(self):
-	# 	print(image)
-	# 	image = self.cleaned_data.get('image', False)
-	# 	if image:
-	# 		if image._height > 1920 or image._width > 1080:
-	# 			raise ValidationError("Height or Width is larger than what is allowed")
-	# 	return image
-	# def cleaned_data(self):
-	# 	if('image' in request.FILES):
-	# 		image = request.FILES['image']
-	# 	if image:
-	# 		if image._size:
-	# 			if image:
-	# 				if image._size > 1*1024*1024:
-	# 					raise ValidationError("Image file too large ( > 4mb )")
-	# 			else:
-	# 				raise ValidationError("Couldn't read uploaded image")
-	# 		else:
-	# 			raise ValidationError("image format should be .png %s"%(image_format))
-	# 		return image
+
 
 class CategoryForm(forms.ModelForm):
 	class Meta:
 		model=Category
 		fields=('title',)
+
 
 class ForbiddenForm(forms.ModelForm):
 	class Meta:

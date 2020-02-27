@@ -1,5 +1,4 @@
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from admin_page.forms import *
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
@@ -99,29 +98,6 @@ def PostList(request):
         return render(request, 'admin_page/admin_home.html', context)
 
 
-# def post_detail(request, slug):
-#     template_name = 'post_detail.html'
-#     post = get_object_or_404(Post, slug=slug)
-#     comments = post.comments.filter(active=True)
-#     new_comment = None
-#     # Comment posted
-#     if request.method == 'POST':
-#         comment_form = CommentForm(data=request.POST)
-#         if comment_form.is_valid():
-
-#             # Create Comment object but don't save to database yet
-#             new_comment = comment_form.save(commit=False)
-#             # Assign the current post to the comment
-#             new_comment.post = post
-#             # Save the comment to the database
-#             new_comment.save()
-#     else:
-#         comment_form = CommentForm()
-
-#     return render(request, template_name, {'post': post,
-#                                            'comments': comments,
-#                                            'new_comment': new_comment,
-#                                            'comment_form': comment_form})
 def post_details(request, post_id):
     all_cat = Category.objects.all()
     postt = Post.objects.get(id=post_id)
@@ -155,16 +131,6 @@ def like_post(request, post_title):
         is_liked = True
     return HttpResponseRedirect('/' + post_title)
 
-
-# def searchForPost(request):
-# 	print('ana hana')
-# 	query = request.GET.get("q")
-# 	print(query)
-# 	if query:
-# 		q = Post.objects.filter(title=query)
-# 		# print(q)
-# 		context = {'object_list' : q}
-# 		return render(request,'admin_page/post_detail.html',context)
 
 def viewPost(request):
     all_posts = Post.objects.all()
@@ -254,5 +220,3 @@ def catAdd(request):
             'title': 'Add'
         }
         return render(request, "admin_page/cat_add.html", context)
-
-# def userSearch(request,username):
