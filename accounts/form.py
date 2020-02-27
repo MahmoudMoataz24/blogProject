@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 
@@ -18,4 +18,5 @@ class RegisterForm(UserCreationForm):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists() or User.objects.filter(username=username).exists():
             raise ValidationError('This user already existed')
+
         return self.cleaned_data

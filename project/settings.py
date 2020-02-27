@@ -38,8 +38,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
-    'admin_page',
-    'django.contrib.admin',
+    'admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates'),os.path.join(BASE_DIR,'admin_page/template')],
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates'), os.path.join(BASE_DIR, 'admin/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
