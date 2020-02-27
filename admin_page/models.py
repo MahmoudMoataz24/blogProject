@@ -39,7 +39,7 @@ class Post(models.Model):
 #     userID=models.ForeignKey(User, on_delete=models.CASCADE)
 #     postID=models.ForeignKey(Post, on_delete=models.CASCADE)
 class Comments(models.Model):
-    postID=models.ForeignKey(Post,on_delete=models.DO_NOTHING,related_name="comments")
+    postID=models.ForeignKey(Post,on_delete=models.CASCADE,related_name="comments")
     content=models.CharField(max_length=150)
     Date=models.DateTimeField(auto_now=True,auto_now_add=False)
     author=models.ForeignKey(User,on_delete=models.CASCADE)

@@ -22,13 +22,13 @@ class PostForm(forms.ModelForm):
 	class Meta:
 		model=Post
 		fields=('category','image','title','content','slug','tagName')
-	def clean_image(self):
-		print(image)
-		image = self.cleaned_data.get('image', False)
-		if image:
-			if image._height > 1920 or image._width > 1080:
-				raise ValidationError("Height or Width is larger than what is allowed")
-		return image
+	# def clean_image(self):
+	# 	print(image)
+	# 	image = self.cleaned_data.get('image', False)
+	# 	if image:
+	# 		if image._height > 1920 or image._width > 1080:
+	# 			raise ValidationError("Height or Width is larger than what is allowed")
+	# 	return image
 	# def cleaned_data(self):
 	# 	if('image' in request.FILES):
 	# 		image = request.FILES['image']
