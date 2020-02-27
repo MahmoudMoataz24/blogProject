@@ -39,3 +39,8 @@ class reply(models.Model):
     slug = models.SlugField(max_length=200)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
     comId = models.ForeignKey(Comments, on_delete=models.CASCADE)
+
+class Likes(models.Model):
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+    postID = models.ForeignKey(Post, on_delete=models.CASCADE)
+    isLiked=models.BooleanField(null=True)

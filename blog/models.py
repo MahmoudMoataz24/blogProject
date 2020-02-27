@@ -29,8 +29,8 @@ from posts.models import Post
 #     userId=models.ForeignKey(User,on_delete=models.CASCADE)
 #     comId=models.ForeignKey(Comments,on_delete=models.CASCADE)
 
-class Likes(models.Model):
-    userID=models.ForeignKey(User,on_delete=models.CASCADE)
-    postID=models.ForeignKey(Post,on_delete=models.CASCADE)
+# class Likes(models.Model):
+#     userID=models.ForeignKey(User,on_delete=models.CASCADE)
+#     postID=models.ForeignKey(Post,on_delete=models.CASCADE)
 
 
