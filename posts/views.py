@@ -32,3 +32,23 @@ def categories(request):
     cat = Category.objects.all()
     catDic = {'cats': cat}
     return render(request, 'posts/cat.html', catDic)
+
+
+def showcatPosts(request, catID):
+    cat = Category.objects.get(id=catID)
+    posts = Post.objects.filter(category_id=catID)
+
+    # comments = Comments.objects.filter(postID_id=postID)
+    # cats = Category.objects.all()
+
+    # data = []
+    # for comment in comments:
+    #     try:
+    #     reply = Reply.objects.get(comId_id=comment.id)
+    #     dic = {'comm': comment, 'rep': reply}
+    # except Exception as e:
+    #     dic = {'comm': comment}
+    # finally:
+    #     data.append(dic)
+    context = {'posts': posts, 'cats': cat}
+    return render(request, 'posts/select.html', context)
