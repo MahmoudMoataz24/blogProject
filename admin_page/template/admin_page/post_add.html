@@ -1,0 +1,9 @@
+{%load static%}
+<head>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css'%}">
+</head>
+<form method="POST">{%csrf_token%}
+	{{post_form.as_p}}
+	<button type="submit">Save</button>
+
+</form>

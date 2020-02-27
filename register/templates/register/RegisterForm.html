@@ -1,0 +1,26 @@
+{% extends 'register/register.html' %}
+{% load crispy_forms_tags %}
+
+{% block register_form %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+   <form method="post">
+        <div class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary mt-4">Create account</button>
+        </div>
+    </form>
+    <div class="pt-3">
+        <small class="text-muted">Already have an account?<a class="ml-2" href="{% url 'login' %}"> Login</a> </small>
+    </div>
+
+{% endblock %}
+
