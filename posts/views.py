@@ -26,3 +26,9 @@ def showSinglePost(request, postID):
     context = {'post': post, 'data': data,
                'cats': cats, 'likeCount': likeCount}
     return render(request, 'posts/single.html', context)
+
+
+def categories(request):
+    cat = Category.objects.all()
+    catDic = {'cats': cat}
+    return render(request, 'posts/cat.html', catDic)
