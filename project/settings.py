@@ -33,13 +33,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     'accounts',
     'crispy_forms',
     'blog.apps.BlogConfig',
+=======
+    'admin_page',
+    'register.apps.RegisterConfig',
+    # 'blog.apps.BlogConfig',
+
+>>>>>>> origin/newdevelop
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,7 +69,11 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, 'accounts/templates')],
+=======
+        'DIRS': [os.path.join(BASE_DIR,'admin_page/template')],
+>>>>>>> origin/newdevelop
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +88,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, '/media') 
+MEDIA_URL = '/media/'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
