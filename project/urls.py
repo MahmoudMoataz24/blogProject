@@ -15,22 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
 import accounts
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('', accounts.views.index, name='index')
-
-]
-=======
+import admin_page
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('admin_page/', include('admin_page.urls')),
-    path('register/', include('register.urls'))
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
->>>>>>> origin/newdevelop
+                  path('admin/', admin.site.urls),
+                  path('accounts/', include('accounts.urls')),
+                  path('admin_page/', include('admin_page.urls')),
+                  path('', admin_page.views.Intro, name='balalalala')
+
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

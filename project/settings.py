@@ -36,16 +36,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
     'accounts',
     'crispy_forms',
-    'blog.apps.BlogConfig',
-=======
     'admin_page',
-    'register.apps.RegisterConfig',
-    # 'blog.apps.BlogConfig',
-
->>>>>>> origin/newdevelop
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,11 +62,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates')],
-=======
-        'DIRS': [os.path.join(BASE_DIR,'admin_page/template')],
->>>>>>> origin/newdevelop
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates'),os.path.join(BASE_DIR,'admin_page/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,4 +129,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'home'

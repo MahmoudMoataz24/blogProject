@@ -17,7 +17,7 @@
                   </div>
                 </div>
                 <br>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{% url 'post_detail' post.id  %}" class="btn btn-primary">Read More &rarr;</a>
                   </div>
                  
                 </div>
@@ -41,9 +41,15 @@
                 <span class="sr-only">(current)</span>
               </a>
         </li>
+          {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
         </li>
+          {% else %}
+              <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">SigIn</a>
+            </li>
+          {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
