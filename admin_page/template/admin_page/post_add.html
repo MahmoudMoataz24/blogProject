@@ -44,7 +44,7 @@
     <h2 class="card-title">Add Post</h2>
   </div>
   <div class="card-body bg-info">
-<form method="POST">{%csrf_token%}
+<form method="POST" enctype="multipart/form-data">{%csrf_token%}
 	<div class="form-group">
 	{{post_form.as_p}}
   {{post_form.non_fields_errors.as_text}}
