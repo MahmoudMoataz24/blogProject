@@ -1,8 +1,8 @@
 {%extends 'admin_page/base.html'%}
 {%load static%}
 {%block main_block%}
-<div class="card-body">
-<table border=1 align="center" class="table"  style="width: 50%;margin-right: 100px;">
+<div class="card-body display:inline">
+<table border=1 align="left" class="table"  style="width: 50%;margin-left: 300px;">
 	<thead class="thead-dark">
 	<th>ID</th>
 	<th>UserName</th>
@@ -37,7 +37,23 @@
 	</tr>
 	{%endif%}
 	{%endfor%}
-</table> 
+
+</table>
+<table border=1 align="center" class="table"  style="width: 5%;margin-right: 0px;">
+	<thead class="thead-dark">
+	<th>State</th>
+</thead>
+
+    {% for state in users_states %}
+	<tr>
+		<td>{{state}}</td>
+    </tr>
+	{%endfor%}
+</table>
+</div>
+<div class="card-body display:inline" >
+
+
 </div>
 {%endblock%}
 {%block content_block%}
