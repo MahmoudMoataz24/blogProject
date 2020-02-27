@@ -20,4 +20,5 @@ urlpatterns = [
 	path('home/forAdd',views.forAdd),
 	path('home/forAll',views.forAll),
 	path('home/fordel/<num>',views.deleteFor),
+	path('home/<post_id>/', views.post_details, name='post_detail'),
 ]

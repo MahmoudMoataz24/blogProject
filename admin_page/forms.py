@@ -21,7 +21,15 @@ class UserForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
 	class Meta:
 		model=Post
-		fields=('category','title','content','slug','tagName')
+		fields=('category','image','title','content','slug','tagName')
+	def clean_image(self):
+            image = self.cleaned_data.get('image', False)
+            if image:
+                if image._height > 1920 or image._width > 1080:
+                    raise ValidationError("Height or Width is larger than what is allowed")
+                return image
+            else:
+                raise ValidationError("No image found")
 	# def cleaned_data(self):
 	# 	if('image' in request.FILES):
 	# 		image = request.FILES['image']
@@ -46,7 +54,7 @@ class ForbiddenForm(forms.ModelForm):
 		model = forbiddenWord
 		fields = ('word',)
 
-# class CommentForm(forms.ModelForm):
-#     class Meta:
-#         model = Comments
-        # fields = ('name', 'email', 'body')
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comments
+        fields = ('author', 'content')

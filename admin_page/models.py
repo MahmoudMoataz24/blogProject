@@ -25,12 +25,29 @@ class Post(models.Model):
         return self.title
     class Meta:
         ordering = ['-created']
+    def validate_image(image):
+        max_height = 1920
+        max_width = 1080
+        height = image.file.height 
+        width = image.file.width
+        if width > max_width or height > max_height:
+            raise ValidationError("Height or Width is larger than what is allowed")
 
+# class Comments(models.Model):
+#     content=models.TextField()
+#     createTime=models.DateTimeField(auto_now_add=True)
+#     userID=models.ForeignKey(User, on_delete=models.CASCADE)
+#     postID=models.ForeignKey(Post, on_delete=models.CASCADE)
 class Comments(models.Model):
-    content=models.TextField()
-    createTime=models.DateTimeField(auto_now_add=True)
-    userID=models.ForeignKey(User, on_delete=models.CASCADE)
-    postID=models.ForeignKey(Post, on_delete=models.CASCADE)
+    postID=models.ForeignKey(Post,on_delete=models.DO_NOTHING,related_name="comments")
+    content=models.CharField(max_length=150)
+    Date=models.DateTimeField(auto_now=True,auto_now_add=False)
+    author=models.ForeignKey(User,on_delete=models.CASCADE)
+
+    class Meta:
+        ordering=['Date']
+    def __str__(self):
+        return 'Comment {}'.format(self.content)
 
 
 class reply(models.Model):

@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse,HttpResponseRedirect
-from admin_page.forms import UserForm,PostForm,CategoryForm,ForbiddenForm
+from admin_page.forms import *
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
 # from django.db.models import Q
 def Intro(request):
 	queryset = Post.objects.filter().order_by('-created')
@@ -20,9 +22,17 @@ def forAdd(request):
 		return render(request,'admin_page/form.html',context)
 
 def forAll(request):
+	queryset = forbiddenWord.objects.filter()
 	forr=forbiddenWord.objects.all()
-	context ={'all_words' : forr}
-	return render(request,'admin_page/st_details.html',context)
+	query = request.GET.get("q")
+	qq='null'
+	if query:
+		qq = forbiddenWord.objects.filter(word=query)
+		cont={'all_words' : qq}
+		return render(request,'admin_page/st_details.html',cont)
+	else:
+		context ={'all_words' : forr}
+		return render(request,'admin_page/st_details.html',context)
 
 def deleteFor(request,num):
 	use = forbiddenWord.objects.get(id = num)
@@ -30,10 +40,17 @@ def deleteFor(request,num):
 	return HttpResponseRedirect('/admin_page/home/forAll')
 
 def viewAll(request):
+	queryset=User.objects.filter()
 	user=User.objects.all()
-	print(user)
-	context ={'all' : user}
-	return render(request,'admin_page/home.html',context)
+	query = request.GET.get("q")
+	qq='null'
+	if query:
+		user = User.objects.filter(username=query)
+		cont ={'all' : user}
+		return render(request,'admin_page/home.html',cont)
+	else:
+		context ={'all' : user}
+		return render(request,'admin_page/home.html',context)
 
 def addUser(request):
 	user_form = UserForm(request.POST or None)
@@ -96,6 +113,26 @@ def PostList(request):
 #                                            'comments': comments,
 #                                            'new_comment': new_comment,
 #                                            'comment_form': comment_form})
+def post_details(request,post_id):
+	all_cat=Category.objects.all()
+	postt=Post.objects.get(id=post_id)
+	# user=User.objects.get(id=)
+	# all_Tags=Tag.objects.all()
+	comments=Comments.objects.filter(id=postt.id)
+	new_comment=None
+	if request.method=='POST':
+		comment_form=CommentForm(data=request.POST)
+		if comment_form.is_valid():
+			new_comment=comment_form.save(commit=False)
+			# new_comment.author=user
+			new_comment.postID=postt
+			new_comment.save()
+	else:
+		comment_form = CommentForm()
+	return render(request,'admin_page/postWhole.html', {'posting': postt,
+                                           'comments': comments,
+                                           'new_comment': new_comment,
+                                           'comment_form': comment_form})
 
 def like_post(request, post_title):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
@@ -121,9 +158,16 @@ def like_post(request, post_title):
 
 def viewPost(request):
 	all_posts = Post.objects.all()
-	print(all_posts)
-	context = {'all_posts':all_posts}
-	return render(request,'admin_page/posts.html',context)
+	queryset=Post.objects.filter()
+	query = request.GET.get("q")
+	qq='null'
+	if query:
+		pos = Post.objects.filter(title=query)
+		cont ={'all_posts' : pos}
+		return render(request,'admin_page/posts.html',cont)
+	else:
+		context = {'all_posts':all_posts}
+		return render(request,'admin_page/posts.html',context)
 
 def addPost(request):
 	if request.method == "POST":
@@ -155,8 +199,16 @@ def delPost(request,num):
 
 def catAll(request):
 	all_cat=Category.objects.all()
-	context = {'all_cat':all_cat}
-	return render(request,'admin_page/category.html',context)
+	queryset=Category.objects.filter()
+	query = request.GET.get("q")
+	qq='null'
+	if query:
+		cat = Category.objects.filter(title=query)
+		cont ={'all_cat' : cat}
+		return render(request,'admin_page/category.html',cont)
+	else:
+		context = {'all_cat':all_cat}
+		return render(request,'admin_page/category.html',context)
 
 def catEdit(request,num):
 	cat_obj=Category.objects.get(id=num)
